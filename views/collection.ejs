@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>MyCDCollection</title>
+    <meta name="description" content="Ta aplikacja internetowa to interaktywna baza płyt CD">
+    <meta name="keywords" content="CD,collection,MyCDCollection">
+    <link rel='stylesheet' href='/stylesheets/collectionstyle.css' />
+</head>
+<body class="site">
+<div id="main">
+    <div id="maincontent">
+        <div id="navbar">
+            <a href="../">
+                <img src="/images/cd-logo.png" alt="Logo CD"/>
+            </a>
+            <nav>
+                <ul id="menu">
+                    <li><a href="../"><b>Strona główna</b></a></li>
+                    <li><a href="#"><b>Moja Kolekcja</b></a></li>
+                    <li><a href="../contact"><b>Kontakt</b></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="searchbar">
+            <form action="" method="post">
+                <input name="searchPhrase" value="<%= locals.enteredPhrase %>" placeholder="Wpisz frazę">
+                <input type="submit" value="Szukaj">
+                <a href="/collection/add" class="button" >Dodaj</a>
+            </form>
+        </div>
+        <div id="table">
+            <table>
+                <tr>
+                    <th>Nr</th>
+                    <th style="width:60%">Nazwa</th>
+                    <th style="width:30%">Artysta</th>
+                    <th>Rok Wydania</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <% var i = 1 %>
+                <% data.forEach(function(row){ %>
+                    <tr>
+                        <td><%= i %></td>
+                        <td><%= row.Nazwa %></td>
+                        <td><%= row.Artysta %></td>
+                        <td><%= row.Rok_Wydania %></td>
+                        <td><a href="/collection/album/<%= row.ID %>" class="button">Szczegóły</a></td>
+                        <td><a href="/collection/delete/<%= row.ID %>" class="button">Usuń</a></td>
+                        <% i = i + 1 %>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+
+        <div style="clear:both;"></div>
+    </div>
+
+    <footer id="foot">
+        <b><p>&copy;2022 MyCDCollection</p></b>
+    </footer>
+
+</div>
+
+</body>
+</html>

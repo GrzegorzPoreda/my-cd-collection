@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Collection</title>
+    <meta name="description" content="Ta aplikacja internetowa to interaktywna baza płyt CD">
+    <meta name="keywords" content="CD,collection,MyCDCollection">
+    <link rel='stylesheet' href='/stylesheets/albumdetailsstyle.css' />
+</head>
+<body class="site">
+<div id="main">
+    <div id="maincontent">
+        <div id="navbar">
+            <a href="../../">
+                <img src="/images/cd-logo.png" alt="Logo CD"/>
+            </a>
+            <nav>
+                <ul id="menu">
+                    <li><a href="../../"><b>Strona główna</b></a></li>
+                    <li><a href="../"><b>Moja Kolekcja</b></a></li>
+                    <li><a href="../../contact"><b>Kontakt</b></a></li>
+                </ul>
+            </nav>
+        </div>
+        <article id="content">
+            <figure>
+                <img src="/images/<%= data[0].ID %>.jpg" alt="Cover #<%= data[0].ID %>"/>
+                <figcaption><b><%= data[0].Artysta %> - <%= data[0].Nazwa %> (<%= data[0].Rok_Wydania %>)</b></figcaption>
+            </figure>
+        </article>
+        <div style="clear:both;"></div>
+    </div>
+
+    <footer id="foot">
+        <b><p>&copy;2022 MyCDCollection</p></b>
+    </footer>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--  <title>-->
+<!--    Details-->
+<!--  </title>-->
+<!--  <link rel='stylesheet' href='/stylesheets/albumdetailsstyle.css' />-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Details</h1>-->
+<!--&lt;!&ndash; TUTAJ TEŻ DODAĆ USUWANIE ALBUMU Z KOLEKCJI &ndash;&gt;-->
+
+<!--&lt;!&ndash; ZMIENIC W COLLECTIONS POKAZYWANIE ID Z BAZY NA WYPISYWANIE PO KOLEI NUMEROW - ID Z BAZY DAC TU W SZCZEGOLACH &ndash;&gt;-->
+
+<!--<form action="" method="post">-->
+
+<!--    <input name="searchPhrase">-->
+<!--    <input type="submit" value="Szukaj">-->
+
+<!--</form>-->
+
+<!--<table>-->
+<!--  <% data.forEach(function(row){ %>-->
+<!--    <tr>-->
+<!--        <td><a href="/collection/album/<%= row.ID%>" class="button">Szczegóły</a></td>-->
+<!--        <td><%= row.ID %></td>-->
+<!--        <td><%= row.Nazwa %></td>-->
+<!--        <td><%= row.Artysta %></td>-->
+<!--        <td><%= row.Rok_Wydania %></td>-->
+<!--    </tr>-->
+<!--  <% }); %>-->
+<!--</table>-->
+<!--</body>-->
+<!--</html>-->

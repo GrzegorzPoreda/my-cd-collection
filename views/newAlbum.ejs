@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>New Album</title>
+    <meta name="description" content="Ta aplikacja internetowa to interaktywna baza płyt CD">
+    <meta name="keywords" content="CD,collection,MyCDCollection">
+    <link rel='stylesheet' href='/stylesheets/newalbumstyle.css' />
+</head>
+<body class="site">
+<div id="main">
+    <div id="maincontent">
+        <div id="navbar">
+            <a href="../../">
+                <img src="/images/cd-logo.png" alt="Logo CD"/>
+            </a>
+            <nav>
+                <ul id="menu">
+                    <li><a href="../../"><b>Strona główna</b></a></li>
+                    <li><a href="../"><b>Moja Kolekcja</b></a></li>     <!-- z jakiegoś powodu przechodzi na główną stronę -->
+                    <li><a href="../../contact"><b>Kontakt</b></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="form">
+            <form action="" method="post">
+                <span>Podaj nazwę albumu: </span> <input name="title" value="<%= locals.enteredTitle %>"> <br>
+                <span>Podaj nazwę zespołu: </span> <input name="artist" value="<%= locals.enteredArtist %>"> <br>
+                <span>Podaj rok wydania albumu: </span> <input name="year" value="<%= locals.enteredYear %>"> <br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div style="clear:both;"></div>
+    </div>
+
+    <footer id="foot">
+        <b><p>&copy;2022 MyCDCollection</p></b>
+    </footer>
+
+</div>
+
+</body>
+</html>
